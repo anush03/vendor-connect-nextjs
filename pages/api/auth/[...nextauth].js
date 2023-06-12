@@ -2,14 +2,14 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 // Initialize NextAuth
+console.log(process.env.CLIENT_ID);
 
 export default NextAuth({
   providers: [
     GoogleProvider({
-      clientId:
-        "671629928216-t66pt4frn1nvv9ibof02brvkh5ip3g70.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
     }),
   ],
-  secret: "Anush@123",
+  secret: process.env.NEXTAUTH_SECRET,
 });
